@@ -15,18 +15,18 @@ const DisplayTemperature=(temperatures)=>{
     // console.log(temperatures)
     const tempResult=temperatures.main.temp
     const tempConverter=parseFloat(tempResult)-273.15;
-    const CTemp=Math.round(tempConverter)
+    const CTemp=tempConverter.toFixed(2)
     // const cTemp=[(tempConverter-32)*5]/9;
     // const temperatureDetails=temperatures.main.temp;
     const  searchResult=document.getElementById('search-result')
-    const div=document.createElement('div');
-    div.innerHTML=`<div class="weather-status text-white text-center">
+    // const div=document.createElement('div');
+    searchResult.innerHTML=`<div class="weather-status text-white text-center">
     <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
     <h1>${(temperatures.name)}</h1>
     <h3><span>${(CTemp)}</span>&deg;C</h3>
     <h1 class="lead">Clouds</h1>
 </div>`
-searchResult.appendChild(div);
+// searchResult.appendChild(div);
 }
 
 
